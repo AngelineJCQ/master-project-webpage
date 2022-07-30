@@ -230,8 +230,8 @@ map.on("load", function () {
         "fill-color": [
           "match",
           ["get", "season"],
-          "breeding","#006d77",
-          "nonbreeding","#83c5be",
+          "breeding","#df8351",
+          "nonbreeding","#7fb6c6",
           //"postbreeding_migration","#b4abec",
           //"prebreeding_migration","#ae83e3",
           "#ffffff"
@@ -239,8 +239,8 @@ map.on("load", function () {
         "fill-opacity": [
           "match",
           ["get", "season"],
-          "breeding",1,
-          "nonbreeding",1,
+          "breeding",0.7,
+          "nonbreeding",0.7,
           //"postbreeding_migration",0,
           //"prebreeding_migration",0,
           0
