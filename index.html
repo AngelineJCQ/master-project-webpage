@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8' />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Chuqin Jiang's Master Project</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
@@ -11,16 +12,489 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300&family=Source+Sans+3:ital,wght@0,400;1,600&family=Source+Serif+Pro:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;700&family=Source+Sans+3:ital,wght@0,400;1,600&family=Source+Serif+Pro:wght@400;600&display=swap');
     </style>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    
 </head>
-
 <body>
+    <main>
+        <section id="scrolly">
+          <div class="sticky-thing">
+          </div>
+  
+          <article>
+            <div class="step" data-step="1" data-bg="url(images/scroll-1/adult.png)">
+              <p>This is a piping plover parent. They love nesting on sandy ocean and lake shores. Every year, they travel hundreds of miles between wintering and breeding sites.</p>
+            </div>
+            <div class="step" data-step="2" data-bg="url(images/scroll-1/chicks.png)" >
+              <p>These are the chicks. The time when they get out of the shells, is when most people love to visit beaches - summer.</p>
+            </div>
+            <div class="step" data-step="3" data-bg="url(images/scroll-1/adult-and-chick.png)">
+              <p>For centuries, their habitats are disturbed by human activities. As of 1986, the U.S. Fish & Wildlife Service lists the Great Lakes population as endangered and the Northern Great Plains and Atlantic populations as threatened.</p>
+            </div>
+            <div class="step lastone" data-step="4" data-bg="url(images/scroll-1/real-pic.png)">
+              <p>Besides human disturbance, some experts believe that climate change may consume parts of their habitats permanently; while others find that extreme weather is not necessary a bad news...</p>
+            </div>
+          </article>
+        </section>
+  
+        <section id="outro"></section>
+    </main>
+  
+      <!-- <div class='debug'></div> -->
+      <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+      <script src="https://unpkg.com/scrollama"></script>
+      <script>
+        // using d3 for convenience
+        var main = document.querySelector("main");
+        var scrolly = main.querySelector("#scrolly");
+        var sticky = scrolly.querySelector(".sticky-thing");
+        var article = scrolly.querySelector("article");
+        var steps = article.querySelectorAll(".step");
+  
+        // initialize the scrollama
+        var scroller = scrollama();
+  
+        // scrollama event handlers
+        function handleStepEnter(response) {
+          // response = { element, direction, index }
+          var el = response.element;
+  
+          // remove is-active from all steps
+          // then add is-active to this step
+          steps.forEach(step => step.classList.remove('is-active'));
+          el.classList.add('is-active');
+  
+          // update graphic based on step
+          sticky.style.backgroundImage = el.dataset.bg;
+        }
+  
+        function init() {
+          // 2. setup the scroller passing options
+          // 		this will also initialize trigger observations
+          // 3. bind scrollama event handlers (this can be chained like below)
+          scroller
+            .setup({
+              step: "#scrolly article .step",
+              offset: 0.7,
+              debug: false
+            })
+            .onStepEnter(handleStepEnter);
+  
+          // setup resize event
+          window.addEventListener("resize", scroller.resize);
+        }
+  
+        // kick things off
+        init();
+      </script>
+    <div class='full-bleed-image' style='background-image: url("images/frontpage.jpg")'>
+        <div class='title-container'>
+            <div class='image-text'>
+                <h4>Climate | Bird </h4>
+                <h1>Shorebirds' Revival</h1>
+                <h2>Extreme weather may benefit shorebirds, but human activities hinder that.</h1>
+                <p class='byline'>By Chuqin Jiang</p>
+            </div>
+        </div>
+    </div>
+    <div class='main-container'>
+        <p class="firstpara">When Samantha Robinson saw JYJ from a mile away in a spotting scope, she knew he would turn away soon, as he always did. He was shy and evasive, avoiding human beings for a long time.</p>
+        <p>JYJ is a piping plover, named after the number on his banded flag. Since he got his band in 2015, he was never trapped again by the researchers.</p>
+        <p>Every plover is different.” Said Robinson, who started studying piping plovers and other shorebirds as a part of the Virginia Tech team in 2016.</p>
+        <p>“You have plovers that are gonna stick right next to their nest and let you know that they're upset with whatever you're doing right in your face, and there are other ones that all go fly away and hide and you'll never see them again.”</p>
+        <p>Piping plovers are among the <a href='https://www.audubon.org/climate/survivalbydegrees''>two-thirds of bird species</a> under the threat of climate change in North America. As a conservation-reliant species, which means their survival depends on active human management, piping plovers are in need of scientists’ monitoring, as well as public consciousness of protection. However, scientists recently found a certain amount of sea-level rise and hurricanes may benefit the shorebirds.</p>
+        <p>From 2013 to 2018, the team that Robinson was in captured and banded 152 adults and 353 chicks on the Fire and Westhampton barrier islands, New York. It’s a part of a series of studies on how piping plovers reacted to the change brought by Hurricane Sandy nine years ago. As the strong wind removed vegetation and expanded sandy area, new habitats suitable for piping plovers are created. But scientists also pointed out that hard facilities are hindering barrier islands from natural movement.</p>
+        <p>Piping plovers are brownish-grey shore birds with a round body, big black eyes, and a short, sharp orange black-tipped bill. They usually have shallow scrape nests in the softy sandy area with sparse vegetation along the shores. In late March, they will fly through the Atlantic Flyway to breed on the beaches of New York and Connecticut.</p>
+        <p>In the late 18th century, plovers were the popular target of hunters, as their feathers can be decorated on hats and clothes. With the Migratory Bird Treaty Act of 1918, they were under the protection and their population increased until 1950. Due to the habitats loss, as more beaches are developed for recreation, the number began to decline again. In 1985, the Atlantic Coast and Northern Great Plains populations were listed as threatened, and the population in the Great Lakes watershed was listed as endangered, according to <a href='https://www.fws.gov/species/piping-plover-charadrius-melodus'>US Fish & Wildlife service</a>.</p>
+    </div>
+    <div class="main-container">
+      <section id="scrolly3" class="side-by-side">
+      <div class="sticky-thing3">
+    
+        <div class="ai2html-container">
+
+<!-- ai2html goes below this line -->
+
+
+<!-- Generated by ai2html v0.106.0 - 2022-08-05 14:36 -->
+<!-- ai file: population-scrolly.ai -->
+<style media="screen,print">
+#g-population-scrolly-box ,
+#g-population-scrolly-box .g-artboard {
+  margin:0 auto;
+}
+#g-population-scrolly-box p {
+  margin:0;
+}
+#g-population-scrolly-box .g-aiAbs {
+  position:absolute;
+}
+#g-population-scrolly-box .g-aiImg {
+  position:absolute;
+  top:0;
+  display:block;
+  width:100% !important;
+}
+#g-population-scrolly-box .g-aiSymbol {
+  position: absolute;
+  box-sizing: border-box;
+}
+#g-population-scrolly-box .g-aiPointText p { white-space: nowrap; }
+#g-population-scrolly-Artboard_1 {
+  position:relative;
+  overflow:hidden;
+}
+#g-population-scrolly-Artboard_1 p {
+  font-family:arial,helvetica,sans-serif;
+  line-height:14px;
+  height:auto;
+  opacity:1;
+  letter-spacing:0em;
+  font-size:12px;
+  text-align:left;
+  color:rgb(116,116,116);
+  text-transform:none;
+  padding-bottom:0;
+  padding-top:0;
+  mix-blend-mode:normal;
+  font-style:normal;
+  position:static;
+}
+#g-population-scrolly-Artboard_1 .g-pstyle0 {
+  height:14px;
+  color:rgb(0,0,0);
+}
+#g-population-scrolly-Artboard_1 .g-pstyle1 {
+  height:14px;
+  color:rgb(162,162,162);
+}
+#g-population-scrolly-Artboard_1 .g-pstyle2 {
+  height:14px;
+}
+
+</style>
+
+<div id="g-population-scrolly-box" class="ai2html">
+<h2 class='chart-title'>Although growing, the distribution of gaining population of the Atlantic Coast piping plover remains uneven</h2>
+<h2 class='sub-title'>The New England recovery unit constitutes a stronghold, but neither New York-New Jersey nor southern states achieve the delisting goal.</h2>
+<!-- Artboard: Artboard_1 -->
+<div id="g-population-scrolly-Artboard_1" class="g-artboard" style="max-width: 600px;max-height: 500px" data-aspect-ratio="1.2" data-min-width="0">
+  
+<div style="padding: 0 0 83.3333% 0;"></div>
+
+  <img id="g-population-scrolly-Artboard_1-img" class="g-aiImg" alt="" src="population-scrolly-Artboard_1.png"/>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-population-scrolly-Artboard_1-interactive-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ x="0px" y="0px" viewBox="0 0 600 500" overflow="visible" xml:space="preserve">
+<g>
+<g id="x-tick-lines-svg_grid-x-svg_datawrapper-fDXBm-1jidnk8-svg" data-name="x-tick-lines-svg_grid-x-svg_datawrapper-fDXBm-1jidnk8-svg" transform="translate(0, 332)">
+  <line fill="none" stroke="#181818" x1="48.069" y1="83.499" x2="48.069" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="113.232" y1="83.499" x2="113.232" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="178.395" y1="83.499" x2="178.395" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="243.557" y1="83.499" x2="243.557" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="308.72" y1="83.499" x2="308.72" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="373.883" y1="83.499" x2="373.883" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="439.046" y1="83.499" x2="439.046" y2="78.499"/>
+  <line fill="none" stroke="#181818" x1="504.208" y1="83.499" x2="504.208" y2="78.499"/>
+</g>
+<g id="x-tick-labels-svg_grid-x-svg_text-axis-svg_datawrapper-fDXBm-63wp0p-svg" data-name="x-tick-labels-svg_grid-x-svg_text-axis-svg_datawrapper-fDXBm-63wp0p-svg" transform="translate(0, 342)">
+  <g display="none">
+    <text transform="matrix(1 0 0 1 33.0529 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">1</text>
+    <text transform="matrix(1 0 0 1 39.7267 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">9</text>
+    <text transform="matrix(1 0 0 1 46.4005 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">9</text>
+    <text transform="matrix(1 0 0 1 53.0743 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 59.7482 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 63.0822 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 98.2156 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">1</text>
+    <text transform="matrix(1 0 0 1 104.8894 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">9</text>
+    <text transform="matrix(1 0 0 1 111.5632 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">9</text>
+    <text transform="matrix(1 0 0 1 118.2371 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">6</text>
+    <text transform="matrix(1 0 0 1 124.9109 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 128.2449 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 163.3783 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 170.0521 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 176.726 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 183.3998 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 190.0736 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 193.4076 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 228.541 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 235.2148 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 241.8887 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 248.5625 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">4</text>
+    <text transform="matrix(1 0 0 1 255.2363 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 258.5703 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 293.7037 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 300.3776 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 307.0514 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 313.7252 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">8</text>
+    <text transform="matrix(1 0 0 1 320.399 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 323.733 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 358.8665 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 365.5403 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 372.2141 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">1</text>
+    <text transform="matrix(1 0 0 1 378.8879 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 385.5618 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 388.8958 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 424.0292 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 430.703 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 437.3768 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">1</text>
+    <text transform="matrix(1 0 0 1 444.0507 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">6</text>
+    <text transform="matrix(1 0 0 1 450.7245 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 454.0585 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+  <g display="none">
+    <text transform="matrix(1 0 0 1 489.1918 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 495.8656 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 502.5394 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">2</text>
+    <text transform="matrix(1 0 0 1 509.2133 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">0</text>
+    <text transform="matrix(1 0 0 1 515.8871 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px"> </text>
+    <text transform="matrix(1 0 0 1 519.2211 90.4995)" display="inline" fill="#747474" font-family="'ArialMT'" font-size="12px">​</text>
+  </g>
+</g>
+<g id="y-tick-labels-svg_grid-y-svg_number-axis-svg_datawrapper-fDXBm-yhj5g2-svg" data-name="y-tick-labels-svg_grid-y-svg_number-axis-svg_datawrapper-fDXBm-yhj5g2-svg" transform="translate(-5, 0)">
+  <text transform="matrix(1 0 0 1 31.3937 414.4995)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">0</text>
+  <text transform="matrix(1 0 0 1 18.046 361.9678)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">200</text>
+  <text transform="matrix(1 0 0 1 18.046 309.4361)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">400</text>
+  <text transform="matrix(1 0 0 1 18.046 256.9044)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">600</text>
+  <text transform="matrix(1 0 0 1 18.046 204.3727)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">800</text>
+  <text transform="matrix(1 0 0 1 8.0382 151.8409)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">1,000</text>
+  <text transform="matrix(1 0 0 1 8.0382 99.3093)" display="none" fill="#A2A2A2" font-family="'ArialMT'" font-size="12px">1,200</text>
+</g>
+<g id="y-base-lines-svg_grid-y-svg_datawrapper-fDXBm-1io9s9d-svg" data-name="y-base-lines-svg_grid-y-svg_datawrapper-fDXBm-1io9s9d-svg">
+  <line fill="none" stroke="#181818" stroke-linecap="square" x1="530.499" y1="410.499" x2="38.069" y2="410.499"/>
+</g>
+<g id="line-2" style="opacity:0.8;">
+  <line fill="none" stroke="#FB8500" x1="38.069" y1="257.61" x2="40.569" y2="257.61"/>
+  <line fill="none" stroke="#FB8500" stroke-dasharray="5.025,5.025" x1="45.594" y1="257.61" x2="525.487" y2="257.61"/>
+  <line fill="none" stroke="#FB8500" x1="527.999" y1="257.61" x2="530.499" y2="257.61"/>
+</g>
+<g id="line-3" style="opacity:0.8;">
+  <line fill="none" stroke="#FB8500" x1="34.491" y1="305.436" x2="36.991" y2="305.436"/>
+  <line fill="none" stroke="#FB8500" stroke-dasharray="5.025,5.025" x1="42.016" y1="305.436" x2="521.909" y2="305.436"/>
+  <line fill="none" stroke="#FB8500" x1="524.421" y1="305.436" x2="526.921" y2="305.436"/>
+</g>
+<g id="line-1" data-name="line-1">
+  <line fill="none" stroke="#FFB703" x1="38.069" y1="246.94" x2="40.569" y2="246.94"/>
+  <line fill="none" stroke="#FFB703" stroke-dasharray="5.025,5.025" x1="45.594" y1="246.94" x2="525.487" y2="246.94"/>
+  <line fill="none" stroke="#FFB703" x1="527.999" y1="246.94" x2="530.499" y2="246.94"/>
+</g>
+<path id="main-3" data-name="main-3" fill="none" stroke="#8ECAE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="
+  M47.679,365.322l16.318-2.364l16.318-1.313l16.318-8.142l16.318,7.354l16.318-3.94l16.318,0.263l16.318,5.516l16.318-0.263
+  l16.318-6.566l16.318-0.263l16.318,1.576l16.318-11.032l16.318-14.446l16.318-5.516l16.318-3.152l16.318,0.525l16.318,7.617
+  l16.318-1.051l16.318,3.152l16.318-21.801l16.318,4.991l16.318,1.051l16.318-2.101l16.318-6.304l16.318,7.092l16.318,16.81
+  l16.318-3.677l16.318,8.405l16.318,2.101"/>
+<path id="main-2" data-name="main-2" fill="none" stroke="#219EBC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="
+  M47.679,326.186l16.318,0.263l16.318-3.415l16.318-12.608l16.318-0.525l16.318,3.152l16.318,8.668l16.318-3.152l16.318-13.396
+  l16.318-7.88l16.318-19.962l16.318-6.041l16.318,2.889l16.318,8.93l16.318-13.921l16.318-12.608l16.318,8.405l16.318,3.152
+  l16.318,11.557l16.318,18.123l16.318-8.93l16.318,17.335l16.318,4.991l16.318-9.981l16.318-21.013l16.318-0.263l16.318,2.889
+  l16.318-14.184l16.318,8.405l16.318-17.861"/>
+<path id="main-1" data-name="main-1" fill="none" stroke="#023047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="
+  M47.679,332.49l16.318-20.75l16.318-19.174l16.318-27.054l16.318-9.981l16.318-5.778l16.318-3.94l16.318,0.788l16.318,0.263
+  l16.318-4.728l16.318-15.497l16.318,3.415l16.318,7.88l16.318,9.193l16.318-3.152l16.318-18.649l16.318-1.576l16.318-11.032h16.318
+  l16.318-20.487l16.318-8.93l16.318,2.889l16.318-1.839l16.318-13.921l16.318,10.506h16.318l16.318-11.032l16.318-16.81
+  l16.318-17.598l16.318-56.997"/>
+</g>
+<style>
+#g-population-scrolly-Artboard_1-interactive-img rect, #g-population-scrolly-Artboard_1-interactive-img circle, #g-population-scrolly-Artboard_1-interactive-img path, #g-population-scrolly-Artboard_1-interactive-img line, #g-population-scrolly-Artboard_1-interactive-img polyline, #g-population-scrolly-Artboard_1-interactive-img polygon { vector-effect: non-scaling-stroke; }
+</style>
+</svg>
+
+  <div id="text-1" class="g-interactive g-aiAbs g-aiPointText" style="top:16.4194%;margin-top:-8.1px;left:88.4136%;width:50px;">
+    <p class="g-pstyle0">NEW</p>
+  </div>
+  <div id="g-ai0-2" class="g-interactive g-aiAbs g-aiPointText" style="top:19.2194%;margin-top:-8.1px;left:0.5063%;width:52px;">
+    <p class="g-pstyle1">1,200</p>
+  </div>
+  <div id="text-1" class="g-interactive g-aiAbs g-aiPointText" style="top:19.2194%;margin-top:-8.1px;left:88.4136%;width:80px;">
+    <p class="g-pstyle0">ENGLAND</p>
+  </div>
+  <div id="g-ai0-4" class="g-interactive g-aiAbs g-aiPointText" style="top:29.8194%;margin-top:-8.1px;left:0.5063%;width:52px;">
+    <p class="g-pstyle1">1,000</p>
+  </div>
+  <div id="g-ai0-5" class="g-interactive g-aiAbs g-aiPointText" style="top:40.2194%;margin-top:-8.1px;left:2.1743%;width:42px;">
+    <p class="g-pstyle1">800</p>
+  </div>
+  <div id="g-ai0-6" class="g-interactive g-aiAbs g-aiPointText" style="top:50.8194%;margin-top:-8.1px;left:2.1743%;width:42px;">
+    <p class="g-pstyle1">600</p>
+  </div>
+  <div id="text-2" class="g-interactive g-aiAbs g-aiPointText" style="top:52.6194%;margin-top:-8.1px;left:88.4136%;width:56px;">
+    <p class="g-pstyle0">NY-NJ</p>
+  </div>
+  <div id="g-ai0-8" class="g-interactive g-aiAbs g-aiPointText" style="top:61.2194%;margin-top:-8.1px;left:2.1743%;width:42px;">
+    <p class="g-pstyle1">400</p>
+  </div>
+  <div id="text-3" class="g-interactive g-aiAbs g-aiPointText" style="top:68.8194%;margin-top:-8.1px;left:88.4136%;width:89px;">
+    <p class="g-pstyle0">SOUTHERN</p>
+  </div>
+  <div id="g-ai0-10" class="g-interactive g-aiAbs g-aiPointText" style="top:71.8194%;margin-top:-8.1px;left:2.1743%;width:42px;">
+    <p class="g-pstyle1">200</p>
+  </div>
+  <div id="g-ai0-11" class="g-interactive g-aiAbs g-aiPointText" style="top:82.2194%;margin-top:-8.1px;left:4.3989%;width:29px;">
+    <p class="g-pstyle1">0</p>
+  </div>
+  <div id="g-ai0-12" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:5.5088%;width:52px;">
+    <p class="g-pstyle2">1992&nbsp;​</p>
+  </div>
+  <div id="g-ai0-13" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:16.3693%;width:52px;">
+    <p class="g-pstyle2">1996&nbsp;​</p>
+  </div>
+  <div id="g-ai0-14" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:27.2297%;width:52px;">
+    <p class="g-pstyle2">2000&nbsp;​</p>
+  </div>
+  <div id="g-ai0-15" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:38.0902%;width:52px;">
+    <p class="g-pstyle2">2004&nbsp;​</p>
+  </div>
+  <div id="g-ai0-16" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:48.9506%;width:52px;">
+    <p class="g-pstyle2">2008&nbsp;​</p>
+  </div>
+  <div id="g-ai0-17" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:59.811%;width:52px;">
+    <p class="g-pstyle2">2012&nbsp;​</p>
+  </div>
+  <div id="g-ai0-18" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:70.6715%;width:52px;">
+    <p class="g-pstyle2">2016&nbsp;​</p>
+  </div>
+  <div id="g-ai0-19" class="g-interactive g-aiAbs g-aiPointText" style="top:85.8194%;margin-top:-8.1px;left:81.5319%;width:52px;">
+    <p class="g-pstyle2">2020&nbsp;​</p>
+  </div>
+</div>
+
+</div>
+
+<!-- End ai2html - 2022-08-05 14:36 -->
+
+
+
+<!-- ai2html goes above this line -->
+
+        </div>
+      </div>
+
+      <div class="scrolly-overlay3">
+        <div class="step3" id="step3-zero">
+          <p>The 2021 Atlantic Coast piping plover population estimate of 2,289 pairs is 22 percent higher than the 2018 estimate, and almost triple the estimate of 790 pairs at the time of the 1986 ESA listing.</p>
+        </div>
+        <div class="step3" id="step3-one">
+          <p>The largest and most sustained population increase has occurred
+            in <span style="background: #023047; color: white">New England</span>. The number has reached its recovery goal, 625 pairs, for almost 20 years.</p>
+        </div>
+        <div class="step3" id="step3-two">
+          <p>For<span style="background: #219ebc">NJ-N</span> and <span style="background: #8ecae6">Southern</span>, however, the minimum subpopulations haven't achived its delisting goal yet.</p>
+        </div>
+        <div class="step3" id="step3-three">
+          <p>In <span style="background: #219ebc">NY-NJ</span> recovery unit, the population surpassed the recovery unity goal of 575 pairs twice but it's not sustained.</p>
+        </div>
+      </div>
+      </section>
+
+      <script>
+
+    function hideNote() {
+  d3.select("#line-1").classed('hidden', true)
+      d3.select("#line-2").classed('hidden', true)
+      d3.select("#line-3").classed('hidden', true)
+  d3.select("#main-1").style('opacity', '1')
+  d3.select("#main-2").style('opacity', '1')
+      d3.select("#main-3").style('opacity', '1')
+  d3.selectAll("#text-1").style('opacity', '1')
+  d3.select("#text-2").style('opacity', '1')
+      d3.select("#text-3").style('opacity', '1')
+    }
+    
+    /* Scrollytelling code goes under here */
+    hideNote()
+
+    d3.select("#step3-one").on('stepout', function(e) {
+      if(e.detail.direction === 'up') {
+        // undo the changes from step one
+        hideNote()
+      }
+    })
+
+    d3.select("#step3-one").on('stepin', function(e) {
+      // undo changes from step two
+      // do changes for step one
+      d3.select("#line-1").classed('hidden', false)
+      d3.select("#line-2").classed('hidden', true)
+      d3.select("#line-3").classed('hidden', true)
+  d3.select("#main-1").style('opacity', '1')
+  d3.select("#main-2").style('opacity', '0.2')
+      d3.select("#main-3").style('opacity', '0.2')
+  d3.selectAll("#text-1").style('opacity', '1')
+  d3.select("#text-2").style('opacity', '0.2')
+      d3.select("#text-3").style('opacity', '0.2')
+    })
+
+    d3.select("#step3-two").on('stepin', function(e) {
+
+      // undo changes from step one
+      // do changes for step two
+  d3.select("#line-1").classed('hidden', true)
+      d3.select("#line-2").classed('hidden', false)
+      d3.select("#line-3").classed('hidden', false)
+  d3.select("#main-1").style('opacity', '0.2')
+  d3.select("#main-2").style('opacity', '1')
+      d3.select("#main-3").style('opacity', '1')
+  d3.selectAll("#text-1").style('opacity', '0.2')
+  d3.select("#text-2").style('opacity', '1')
+      d3.select("#text-3").style('opacity', '1')
+    })
+
+    d3.select("#step3-three").on('stepin', function(e) {
+      // undo changes from step two
+  d3.select("#line-1").classed('hidden', true)
+      d3.select("#line-2").classed('hidden', false)
+      d3.select("#line-3").classed('hidden', true)
+  d3.select("#main-1").style('opacity', '0.2')
+  d3.select("#main-2").style('opacity', '1')
+      d3.select("#main-3").style('opacity', '0.2')
+  d3.selectAll("#text-1").style('opacity', '0.2')
+  d3.select("#text-2").style('opacity', '1')
+      d3.select("#text-3").style('opacity', '0.2')
+    })
+
+
+      </script>
+
+      <script>
+  const scroller3 = scrollama();
+
+scroller3
+  .setup({
+    step: "#scrolly3 .scrolly-overlay3 .step3",
+    offset: 0.5,
+    debug: false
+  })
+  .onStepEnter(function({ element, index, direction}) {
+    const event = new CustomEvent('stepin', { detail: { direction: direction } })
+    element.dispatchEvent(event);
+  })
+  .onStepExit(function({ element, index, direction }) {
+    const event = new CustomEvent('stepout', { detail: { direction: direction } })
+    element.dispatchEvent(event);
+  });
+
+window.addEventListener("resize", scroller3.resize);
+      </script>
+    </div>
     <div id="map"></div>
     <div id='story'></div>
     <script src='config.js'></script>
     <script src="./map.js"></script>
-
 </body>
-
 </html>

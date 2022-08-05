@@ -60,26 +60,7 @@ features.setAttribute("id", "features");
 
 // If the content exists, then assign it to the 'header' element
 // Note how each one of these are assigning 'innerHTML'
-if (config.topTitle) {
-  var topTitle = document.createElement("div");
-  topTitle.innerHTML = config.topTitle;
-  header.appendChild(topTitle);
-}
-if (config.title) {
-  var titleText = document.createElement("div");
-  titleText.innerHTML = config.title;
-  header.appendChild(titleText);
-}
-if (config.subtitle) {
-  var subtitleText = document.createElement("div");
-  subtitleText.innerHTML = config.subtitle;
-  header.appendChild(subtitleText);
-}
-if (config.byline) {
-  var bylineText = document.createElement("div");
-  bylineText.innerHTML = config.byline;
-  header.appendChild(bylineText);
-}
+
 if (config.description) {
   var descriptionText = document.createElement("div");
   descriptionText.innerHTML = config.description;
@@ -108,7 +89,7 @@ config.chapters.forEach((record, idx) => {
   chapter.innerHTML = record.chapterDiv;
   // Sets the id for the vignette and adds the step css attribute
   container.setAttribute("id", record.id);
-  container.classList.add("step");
+  container.classList.add("step-second");
   // If the chapter is the first one, set it to active
   if (idx === 0) {
     container.classList.add("active");
@@ -230,7 +211,7 @@ map.on("load", function () {
         "fill-color": [
           "match",
           ["get", "season"],
-          "breeding","#df8351",
+          "breeding","#023e8a",
           "nonbreeding","#7fb6c6",
           //"postbreeding_migration","#b4abec",
           //"prebreeding_migration","#ae83e3",
@@ -249,10 +230,33 @@ map.on("load", function () {
     },
   );
 
+  map.addLayer(
+    {
+      id: "sandyDamage",
+      type: "fill",
+      source: {
+        type: "geojson",
+        data: "data/sandy_damage.geojson",
+      },
+      paint: {
+          "fill-color":
+        ["step", ["get", "total_dmg"],
+        "#ffffff",
+        9,"#ee9b00",  
+        14, "#ca6702", 
+        24, "#bb3e03",
+        139, "#ae2012",
+        1000,"#9b2226"
+      ],
+        "fill-opacity":0
+    },
+  }, "settlement-subdivision-label",
+  );
+
   // Setup the instance, pass callback functions
   scroller
     .setup({
-      step: ".step",
+      step: ".step-second",
       offset: 0.75,
       progress: true,
     })
