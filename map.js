@@ -227,7 +227,7 @@ map.on("load", function () {
           0
         ],
       },
-    },
+    },"settlement-subdivision-label",
   );
 
   map.addLayer(
@@ -251,6 +251,58 @@ map.on("load", function () {
         "fill-opacity":0
     },
   }, "settlement-subdivision-label",
+  );
+
+  map.addLayer(
+    {
+      id: "noIntervention",
+      type: "fill",
+      source: {
+        type: "geojson",
+        data: "data/no-intervention.geojson",
+      },
+      paint: {
+          "fill-color":
+        [
+        "match", ["get", "DN"],
+        0,"blue",  
+        1, "grey", 
+        2, "brown",
+        3, "green",
+        10,"red",
+        "red"
+      ],
+        "fill-opacity":0
+    },
+  }, "settlement-subdivision-label",
+  );
+
+  map.loadImage('./images/marker.png', (error, image) => {
+    if (error) throw error;
+    // add image to the active style and make it SDF-enabled
+  map.addImage('marker-icon', image);
+  });
+
+  map.addLayer(
+    {
+      id: "markers",
+      type: "circle",
+      source: {
+        type: "geojson",
+        data: "data/marker-2.geojson",
+      },
+      //layout: {
+      //  'icon-image': 'marker-icon',
+      //  'icon-size': 10000,
+      //},
+      paint: {
+        'circle-color': 'orange',
+        'circle-radius': 10,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#fff',
+        'circle-opacity':0,
+    },
+  },
   );
 
   // Setup the instance, pass callback functions
