@@ -193,27 +193,13 @@ p.firstpara {
   clear: both;
 }
 
-.legend  {
-  max-width: 700px;
-  margin: 1em auto 1em auto;
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-.breeding {
-  background-color: #023e8a;
-}
-
-.non-breeding {
-    background-color: #7fb6c6;
-}
 
 .legend-bar {
   position: inherit;
   padding: 0;
   height: 10px;
-  width: 100px;
-  margin-bottom: 15px;
+  width: 195px;
+  margin-bottom: -10px;
   background-image: linear-gradient(to right, #ee9b00,#9b2226);
 }
 
@@ -238,7 +224,7 @@ p.firstpara {
   font-size: 0.9em;
   margin-top: -5px;
   padding-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-style: italic;
   margin: 0 auto;
 }
@@ -247,7 +233,7 @@ p.firstpara {
   font-size: 0.8em;
   margin-top: -10px;
   padding-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-style: italic;
 }
 
@@ -262,6 +248,10 @@ p.firstpara {
   max-width: 600px;
   padding: 0.75em 0em;
   margin: 0px auto;
+}
+
+#rockawayBeach {
+  padding-bottom: 0;
 }
 
 a, a:hover, a:visited {
@@ -375,6 +365,18 @@ article {
   font-size: 1.25rem;
   font-family: 'Frank Ruhl Libre', serif;
   line-height: 30px;
+}
+
+.sticky-thing h3 {
+  font-weight: 600;
+  font-style:italic;
+  font-family: 'Frank Ruhl Libre', serif;
+  color: #444;
+  text-shadow: 1px 1px #f3f3f3 ;
+  font-size: 1rem;
+  line-height: 30px;
+  padding-top: 90vh;
+  padding-left: 150vh;
 }
 
 .step {

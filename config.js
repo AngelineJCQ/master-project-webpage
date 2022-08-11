@@ -1,51 +1,55 @@
 let descriptionDiv =
-  '<p style="text-align:center;margin-top:0px; padding-top:50px">Scroll to see its range map<br>▼</p>' +
-  '<div class="legend"><div class="box breeding"></div><p>&nbsp Breeding season: April - October </p><div class="box non-breeding"></div><p>&nbsp Non-breeding season: November - March</p></div>';
+  '<p style="text-align:center;margin-top:0px; padding-top:50px; padding-bottom:30px">Scroll to see its range map<br>▼</p>';
 
 let divChapter1 =
-  "<p style='max-width:600px; margin-left:auto; margin-right:auto'>The Atlantic Coast population is only one part of the species' range. In the late spring and early summer, piping plovers travel to the coast, Great Lake and Northern Great Plains, where they <span style='background-color:#023e8a;color:white'>mate, hatch, forage</span>, and then bring chicks back to the southern states and even further <span style='background-color:#7fb6c6;color:white'>for the winter</span>.</p>";
+  "<p style='max-width:600px; margin-left:auto; margin-right:auto'>The Atlantic Coast population is only one part of the species' range. In the late spring and early summer, piping plovers travel to the coast, Great Lake and Northern Great Plains, where they <span style='background-color:#023e8a;color:white'>mate, hatch, forage</span>, and then bring chicks back to the southern states, and sometimes further, <span style='background-color:#7fb6c6;color:white'>for the winter</span>.</p>";
 
 let divChapter2 =
   "<p>On the northeastern coast, scientists have studied their reproduction and behavior for decades. In 1985, <a href='https://www.vtshorebirds.org/our-vision'>Virginia Tech Shorebird Program</a> recruited a team of researchers to monitor and study breeding plovers in <span style='font-weight:800'>Virginia</span> and <span style='font-weight:800'>Maryland</span>.</p>";
 
 let divChapter31 =
-  "<p>It expanded to <span style='font-weight:800'>New York</span> in 1992. They found that plover demography and growth are dependent on habitat availability, and the amount of human recreation in the areas, and is influenced by storm disturbance.</p>" 
+  "<p>It expanded to <span style='font-weight:800'>New York</span> in 1992. They found that plover demography and growth are dependent on habitat availability, the amount of human recreation in the area, and how much the area is subject to disturbance by storms.</p>" 
 
 let divChapter32 =
-  "<p>After the historical <span style='color:#ae2012; font-weight:700'>Hurricane Sandy</span> hit the Atlantic coast in 2012, they started to look into how it might change the overall suitability of nesting and how shorebirds respond to the change.</p>" +
+  "<p>After <span style='color:#ae2012; font-weight:700'>Hurricane Sandy</span> hit and badly damaged much of the Atlantic coast in 2012, they started to look into how the shorebirds respond to change. Would this help or hurt their ability to nest?</p>" +
   "<p class='legend-bar'></p>" +
   "<p style='margrin-top:0; font-size:small'>less damage --> more damage</p>";
 
 
 let divChapter4 =
-"<p>In 2019, the research team led by Katie M. Walker published the first <a href='https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.2771'>study</a> on the hurricane overwashing effect. They found that piping plover abundance increased 93% by 2018 from pre-Hurricane Sandy abundances on <span style='font-weight:800'>Fire Island</span> and <span style='font-weight:800'>Westhampton Island</span>, New York, with most pairs nesting in new habitats created by the storm.</p>" +
+"<p>In 2019, the research team led by Katie M. Walker published the first <a href='https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.2771'>study</a> on the hurricane overwashing effect. It means that the flow of wind and water can bring sand inland ang change the sediment composition during storm events. They found that the piping plover population increased 93% by 2018 from pre-Hurricane Sandy on <span style='font-weight:800'>Fire Island</span> and <span style='font-weight:800'>Westhampton Island</span>, with most pairs nesting in new habitats created by the storm.</p>" +
 "<img src='images/fireisland.gif'>" +
-"<p class='imageCredit'> Hurricane Sandy removed vegetations and created more sandy areas favored by piping plovers </p>" +
-"<p>The study also found that some engineered habitats, including manipulated dunes and restoration areas, are gaining piping plover populations too. However, since these places were meant to reduce future overwash and increase human activities, the article suggested that dune development should not be considered a management strategy.</p>" +
-"<p>Similarly, another U.S. Geological Survey research team led by Sara Zeigler, also found that a certain amount of increase in sea rise and increased likelihood of overwash can benefit the shorebirds. Based on the prediction model, as rates of shoreline erosion increase, Fire Island would become narrower and flatter, with more flooding in housing communities and businesses on the island. Instead, shorebirds like the piping plover would move to new habitats as long as hard structures like buildings or seawalls do not block sand movement.</p>"+
-"<p>“I think we're still very much in the learning phase,” said Zeigler. She pointed out that scientists are struggling to find that balance between when a sea-level rise going to be healthy for some of these ecosystems and when is going to be too much. “We will get to a point inevitably where there's so much water and the storms are so powerful, that we're going to start to see our islands disintegrate. And we did see that in some places in the Gulf.”</p>"
+"<p class='imageCredit'>Hurricane Sandy removed vegetation and created more beachy areas that piping plovers use to nest.</p>" +
+"<p>The study also found that some engineered habitats, including manipulated dunes and restoration areas, are gaining piping plover populations too. However, since these places were meant to reduce future movement of islands and increase human activities, the article suggested that dune development should not be considered a management strategy.</p>" +
+"<p>Similarly, another U.S. Geological Survey research team led by Sara Zeigler, also found that a certain amount of increase in sea rise and increased likelihood of overwash can benefit the shorebirds.</p>"+
+"<p>Based on the prediction model, as rates of shoreline erosion increase, Fire Island would become narrower and flatter, with more flooding in housing communities and businesses on the island. And shorebirds like the piping plover would move to new habitats created by this erosion.</p>" +
+"<p>“I think we’re still very much in the learning phase,” Zeigler said. She pointed out that scientists are struggling to find that balance between when a sea-level rise is going to be healthy for some of these ecosystems and when it is going to be too much.</p>" +
+"<p>“We will get to a point, inevitably, where there's so much water and the storms are so powerful, that we're going to start to see our islands disintegrate. And we did see that in some places in the Gulf.”</p>"
 ;
 
 let divChapter5 =
-"<p>Shelby Casas, the Coastal Program Associate at Audubon New York, also pointed out that the early storm during the nesting season can have fatal effects on the shorebirds. The flood can wash out a bunch of nests where birds have already laid eggs and the birds have to restart again.</p>" +
-"<p>On July 7, Casas just finished an outreach lecture at <span style='font-weight:800'>Jones Beach Energy & Nature Center</span>. When she took a walk on the west end of the beach afterward, she noticed a sign saying ‘no dog on this site’ was ripped off from the fence and broken from the middle.</p>" +
+"<p>But, storm surge is not all good for piping plovers. </p>" +
+"<p>Shelby Casas, the Coastal Program Associate at Audubon New York, pointed out that the early storm during the nesting season can have fatal effects on the shorebirds. The flood can wash out nests where birds have already laid eggs. Then, the birds have to start again.</p>" +
+"<p>On July 7, Casas just finished an outreach lecture at <span style='font-weight:800'>Jones Beach Energy & Nature Center</span>. When she took a walk on the west end of the beach afterward, she noticed a sign saying “no dogs on this site” was ripped off from the fence and broken in the middle.</p>" +
 '<img src="images/shelby-sign.jpeg">' +
-"<p class='imageCredit'> Shelby Casas, at the west end of Jones Beach, July 9 </p>" +
-"<p>Mia Ramirez, Environmental Education Assistant from the Jones Beach State Park, who accompanied Casas for the walk, said that lots of people feel they have an ownership of the beach. “They're like, why do I have to worry about this bird? I've been taking my dog here for years and years and years…Why is someone telling me not to (do it)?”</p>"+
-"<p>Casas said she was prepared for that and will implement a new sign. There are more signs simply telling people to stay out of the shorebird nesting area before. But this year, they try to add more explanatory notes, illustrations drawn by local school kids and pictures of the birds.</p>"+
+"<p class='imageCredit'> Shelby Casas, at the west end of Jones Beach, July 9  (Photo by Chuqin Jiang)</p>" +
+"<p>Mia Ramirez, Environmental Education Assistant from the Jones Beach State Park, who accompanied Casas for the walk, said that lots of people feel they have an ownership of the beach. </p>"+
+"<p>“They're like, ‘Why do I have to worry about this bird? I've been taking my dog here for years and years and years…Why is someone telling me not to (do it)?’”</p>" +
+"<p>Casas said she was prepared for that. She’ll put up a new sign. In the past few years, they only used signs simply telling people to stay out of the nesting area. But this year, the signs have more explanatory notes and illustrations drawn by local school kids and other designers.</p>"+
 '<img src="images/mia-sign.jpg">' +
-"<p class='imageCredit'> Mia Ramirez, holding a sign designed by kids, July 9 </p>" +
-"<p>“Our goal this year with the signs was kind of more to draw people in…and get the message across that we don't want dogs on these beaches, but to also explain why,” said Casas.</p>" +
+"<p class='imageCredit'> Mia Ramirez, holding a sign designed by kids, July 9 (Photo by Chuqin Jiang)</p>" +
+"<p>“Our goal this year with the signs was kind of more to draw people in. And get the message across that we don't want dogs on these beaches, but to also explain why,” Casas said.</p>" +
 "<p>This is a part of a three-month <a href='https://ny.audubon.org/news/can-individual-actions-save-threatened-birds-two-local-beaches-chosen-beach-nesting-bird-study'>study</a> to review the outcomes of different outreach efforts conducted by Audubon New York. Apart from putting up signs, the team has organized more frequent outreach activities compared to previous years, like tabling at multiple sites along the north and the south shore that have shorebird activity.</p>" 
 ;
 
 let divChapter7 =
-"<p>But the difficult part is to make people aware that the birds are actually here. Not many people know that piping plovers love walking on the sand and nesting right on the beach. They are good at camouflage - it’s hard to tell them from the sand from a distance.</p>" +
-"<p>On <span style='font-weight:800'>Rockaway Beach</span> in Queens, the west part of 38th Street is closed for protecting the breeding birds. A symbolic fence was put up, visuallily warning people to keep out of that areas. On the sign, the illustrations of least tern and piping plover are under the red, uppercase letters ‘Restricted Area’.</p>" +
-"<p>The reason why only posted and roped off area is set up instead of permanent physical fences, is that the structure on the shoreline can be easily washed away by the high tides, according to <a href='https://kimsmithdesigns.com/2018/08/01/piping-plover-symbolic-fencing-recommendations/'>Kim Smith</a>, a wildlife conservationist and landscape designer. On some beaches, when piping plover couples start to build their nests, smaller stell-wire fences are constructed around them. The holes on the fences are big enough only for piping plovers to run through, keeping other larger predators, like feral cats and raccoons, and pets out.</p>" +
-"<p>Even well-behaved pets can be a threat to the birds. Unleashed dogs can be mistaken as predators by plovers. To protect their chicks, they will pretend their wings are broken and lead the dogs away from the nest. But such a strategy may let their nest open to real predators. And the trash left by beachgoers attracts raccoons and foxes, which can disturb and eat chicks.</p>" +
-"<p>Moreover, some beachgoers might spot and disturb them on purpose. More than one researcher explained that they normally don’t share the nest location data with the public because they are afraid people will find the nest and get too close to them.</p>" +
-"<p>Last month, NYC Plover Project, a voluntary group, tweeted that a 12-day-old piping plover chick was stepped on by a beachgoer. After being seen dragging its broken leg on the beach in Queens, it died next to its sibling the day after.</p>" ;
+"<p>But the difficult part is to make people aware that the birds are actually here.</p>" + 
+"<p>They are good at camouflage — it’s hard to tell them from the sand from a distance. And not many people know that piping plovers love walking on the sand and nesting right on the beach. </p>" +
+"<p>On <span style='font-weight:800'>Rockaway Beach</span> in Queens, the west part of Beach 38th Street is closed for protecting the breeding birds. A symbolic fence was put up, visually warning people to keep out of the area. On the sign, the illustrations of least tern and piping plover are under the red, uppercase letters ‘Restricted Area’.</p>" +
+"<p>Only posted and roped-off areas are set up, instead of permanent physical fences, because they can be easily washed away by the high tides, according to <a href='https://kimsmithdesigns.com/2018/08/01/piping-plover-symbolic-fencing-recommendations/'>Kim Smith</a>, a wildlife conservationist and landscape designer. On some beaches, when piping plover couples start to build their nests, smaller steel-wire fences are built around them. The holes on the fences are big enough only for piping plovers to run through, keeping other larger predators, like feral cats and raccoons, and pets out.</p>" +
+"<p>Even well-behaved pets can be a threat to the birds. Unleashed dogs can be mistaken as predators by plovers. To protect their chicks, they will pretend their wings are broken and lead the dogs away from the nest. But this strategy may let their nest open to real predators. And the trash left by beachgoers attracts raccoons and foxes, which can disturb and eat chicks.</p>" +
+"<p>Some beachgoers might spot and disturb them on purpose. More than one researcher explained that they normally don’t share the nest location data with the public because they are afraid people will find the nest and get too close to them.</p>" +
+"<p>Last month, NYC Plover Project, a volunteer group, tweeted that a 12-day-old piping plover chick was stepped on by a beachgoer. After being seen dragging its broken leg on the beach in Queens, it died next to its sibling the following day.</p>" ;
 
 
 var config = {
@@ -75,12 +79,12 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
-          layer: "noIntervention",
+          layer: "virginiaMaryland",
           opacity: 0,
           duration: 300,
         },
         {
-          layer: "markers",
+          layer: "noIntervention",
           opacity: 0,
           duration: 300,
         },
@@ -91,11 +95,6 @@ var config = {
         },
       ],
       onChapterExit: [
-        {
-          layer: "ploverRange",
-          opacity: 0.7,
-          duration: 300,
-        },
       ],
     },
     {
@@ -118,13 +117,13 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
-          layer: "markers",
-          opacity: 1,
+          layer: "virginiaMaryland",
+          opacity: 0.3,
           duration: 300,
         },
         {
           layer: "ploverRange",
-          opacity: 0.7,
+          opacity: 0,
           duration: 300,
         },
       ],
@@ -132,6 +131,11 @@ var config = {
         {
           layer: "ploverRange",
           opacity: 0,
+          duration: 300,
+        },
+        {
+          layer: "virginiaMaryland",
+          opacity: 0.3,
           duration: 300,
         },
       ],
@@ -156,12 +160,23 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
-          layer: "ploverRange",
+          layer: "newYork",
           opacity: 0.3,
           duration: 300,
         },
+        {
+          layer: "ploverRange",
+          opacity: 0,
+          duration: 300,
+        },
       ],
-      onChapterExit: [],
+      onChapterExit: [
+        {
+          layer: "newYork",
+          opacity: 0,
+          duration: 300,
+        },
+      ],
     },
     {
       id: "hurricaneSandy",
@@ -183,6 +198,11 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
+          layer: "noIntervention",
+          opacity: 0,
+          duration: 300,
+        },
+        {
           layer: "ploverRange",
           opacity: 0,
           duration: 300,
@@ -190,11 +210,6 @@ var config = {
         {
           layer: "sandyDamage",
           opacity: 0.7,
-          duration: 300,
-        },
-        {
-          layer: "markers",
-          opacity: 0,
           duration: 300,
         },
       ],
@@ -232,7 +247,7 @@ var config = {
         },
         {
           layer: "noIntervention",
-          opacity: 1,
+          opacity: 0.5,
           duration: 300,
         },
       ],
@@ -242,7 +257,11 @@ var config = {
           opacity: 0,
           duration: 300,
         },
-      ],
+        {
+          layer: "noIntervention",
+          opacity: 0,
+          duration: 300,
+        },]
     },
     {
       id: "toJonesBeach",
@@ -264,12 +283,22 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
+          layer: "jonesBeach",
+          opacity: 0.5,
+          duration: 300,
+        },
+        {
           layer: "ploverRange",
           opacity: 0,
           duration: 300,
         },
       ],
       onChapterExit: [
+        {
+          layer: "jonesBeach",
+          opacity: 0,
+          duration: 300,
+        },
         {
           layer: "ploverRange",
           opacity: 0,
@@ -278,13 +307,13 @@ var config = {
       ],
     },
     {
-      id: "jamaicaBay",
+      id: "rockawayBeach",
       alignment: "full",
       hidden: false,
       chapterDiv: divChapter7,
       location: {
         center: [-73.765,40.593],
-        zoom: 11.42,
+        zoom: 13,
         zoomSmall: 11,
         pitch: 40,
         bearing: -7,
@@ -294,12 +323,22 @@ var config = {
       callback: "",
       onChapterEnter: [
         {
+          layer: "rockawayBeach",
+          opacity: 0.5,
+          duration: 300,
+        },
+        {
           layer: "ploverRange",
           opacity: 0,
           duration: 300,
         },
       ],
       onChapterExit: [
+        {
+          layer: "rockawayBeach",
+          opacity: 0,
+          duration: 300,
+        },
         {
           layer: "ploverRange",
           opacity: 0,

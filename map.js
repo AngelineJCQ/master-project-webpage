@@ -262,48 +262,68 @@ map.on("load", function () {
         data: "data/no-intervention.geojson",
       },
       paint: {
-          "fill-color":
-        [
-        "match", ["get", "DN"],
-        0,"blue",  
-        1, "grey", 
-        2, "brown",
-        3, "green",
-        10,"red",
-        "red"
-      ],
-        "fill-opacity":0
+          "fill-color":"#fff3b0",
+        "fill-opacity": 0,
     },
   }, "settlement-subdivision-label",
   );
-
-  map.loadImage('./images/marker.png', (error, image) => {
-    if (error) throw error;
-    // add image to the active style and make it SDF-enabled
-  map.addImage('marker-icon', image);
-  });
-
   map.addLayer(
     {
-      id: "markers",
-      type: "circle",
+      id: "virginiaMaryland",
+      type: "fill",
       source: {
         type: "geojson",
-        data: "data/marker-2.geojson",
+        data: "data/virginiaMaryland.geojson",
       },
-      //layout: {
-      //  'icon-image': 'marker-icon',
-      //  'icon-size': 10000,
-      //},
       paint: {
-        'circle-color': 'orange',
-        'circle-radius': 10,
-        'circle-stroke-width': 1,
-        'circle-stroke-color': '#fff',
-        'circle-opacity':0,
+        "fill-color": "#fff3b0",
+        "fill-opacity":0,
     },
-  },
+  },"settlement-subdivision-label",
   );
+  map.addLayer(
+    {
+      id: "newYork",
+      type: "fill",
+      source: {
+        type: "geojson",
+        data: "data/newYork.geojson",
+      },
+      paint: {
+          "fill-color": "#fff3b0",
+        "fill-opacity":0,
+    },
+  },"settlement-subdivision-label",
+  );
+  map.addLayer(
+    {
+      id: "jonesBeach",
+      type: "fill",
+      source: {
+        type: "geojson",
+        data: "data/jonesBeach.geojson",
+      },
+      paint: {
+          "fill-color": "#fff3b0",
+        "fill-opacity":0,
+    },
+  },"settlement-subdivision-label",
+  );
+  map.addLayer(
+    {
+      id: "rockawayBeach",
+      type: "fill",
+      source: {
+        type: "geojson",
+        data: "data/rockawayBeach.geojson",
+      },
+      paint: {
+          "fill-color": "#fff3b0",
+        "fill-opacity":0,
+    },
+  },"settlement-subdivision-label",
+  );
+
 
   // Setup the instance, pass callback functions
   scroller

@@ -22,27 +22,29 @@
     <main>
         <section id="scrolly">
           <div class="sticky-thing">
+            <h3></h3>
           </div>
   
           <article>
-            <div class="step" data-step="1" data-bg="url(images/scroll-1/adult.png)">
+            <div class="step" data-step="1" data-bg="url(images/scroll-1/adult.png)" data-tx="">
               <p>This is a piping plover parent. They love nesting on sandy ocean and lake shores. Every year, they travel hundreds of miles between wintering and breeding sites.</p>
             </div>
-            <div class="step" data-step="2" data-bg="url(images/scroll-1/chicks.png)" >
-              <p>These are the chicks. The time when they get out of the shells, is when most people love to visit beaches - summer.</p>
+            <div class="step" data-step="2" data-bg="url(images/scroll-1/chicks.png)" data-tx="" >
+              <p>These are the chicks. The time when they hatch is when most people love to visit beaches: in the summer.</p>
             </div>
-            <div class="step" data-step="3" data-bg="url(images/scroll-1/adult-and-chick.png)">
-              <p>For centuries, their habitats are disturbed by human activities. As of 1986, the U.S. Fish & Wildlife Service lists the Great Lakes population as endangered and the Northern Great Plains and Atlantic populations as threatened.</p>
+            <div class="step" data-step="3" data-bg="url(images/scroll-1/adult-and-chick.png)" data-tx="">
+              <p>For centuries, their habitats have been disturbed by humans. As of 1986, the U.S. Fish & Wildlife Service lists the Great Lakes population as endangered and the Northern Great Plains and Atlantic populations as threatened.</p>
             </div>
-            <div class="step" data-step="4" data-bg="url(images/scroll-1/real-pic.png)">
-              <p>Besides human disturbance, some experts believe that climate change may consume parts of their habitats permanently; while others find that extreme weather is not necessarily bad news...</p>
+            <div class="step" data-step="4" data-bg="url(images/scroll-1/real-pic.png)" data-tx="Photo by USGS">
+              <p>Besides human disturbance, some experts believe that climate change may consume parts of their habitats permanently; while others find that, counterintuitively, extreme weather is not necessarily bad news.</p>
             </div>
-            <div class="step lastone" data-step="5" data-bg="url(images/frontpage.jpg)">
+            <div class="step lastone" data-step="5" data-bg="url(images/frontpage.jpg)" data-tx="Photo by Chuqin Jiang ">
               <div class='title-container'>
                 <div class='image-text'>
                     <h4>Climate | Bird </h4>
                     <h1>Shorebirds' Revival</h1>
-                    <h2>Extreme weather may benefit shorebirds, but human activities hinder that.</h1>
+                    <h2>Extreme weather may benefit shorebirds, but humans make it complicated. 
+                      .</h1>
                     <p class='byline'>By Chuqin Jiang</p>
                 </div>
             </div>
@@ -79,6 +81,7 @@
   
           // update graphic based on step
           sticky.style.backgroundImage = el.dataset.bg;
+          sticky.querySelector("h3").innerText = el.dataset.tx;
         }
   
         function init() {
@@ -101,14 +104,16 @@
         init();
       </script>
     <div class='main-container'>
-        <p class="firstpara">When Samantha Robinson saw JYJ from a mile away in a spotting scope, she knew he would turn away soon, as he always did. He was shy and evasive, avoiding human beings for a long time.</p>
-        <p>JYJ is a piping plover, named after the number on his banded flag that researchers gave her seven years ago. Since he got his band in 2015, he was never trapped again by humans.</p>
-        <p>Every plover is different.” Said Robinson, who started studying piping plovers and other shorebirds as a part of the Virginia Tech team in 2016.</p>
-        <p>“You have plovers that are gonna stick right next to their nest and let you know that they're upset with whatever you're doing right in your face, and there are other ones that all go fly away and hide and you'll never see them again.”</p>
-        <p>Piping plovers are among the <a href='https://www.audubon.org/climate/survivalbydegrees''>two-thirds of bird species</a> under the threat of climate change in North America. As a conservation-reliant species, which means their survival depends on active human management, piping plovers are in need of scientists’ monitoring, as well as public consciousness of protection. However, scientists recently found a certain amount of sea-level rise and hurricanes may benefit the shorebirds.</p>
-        <p>From 2013 to 2018, the team that Robinson was in captured and banded 152 adults and 353 chicks on the Fire and Westhampton barrier islands, New York. It’s a part of a series of studies on how piping plovers reacted to the change brought by Hurricane Sandy nine years ago. As the strong wind removed vegetation and expanded sandy area, new habitats suitable for piping plovers are created. But scientists also pointed out that hard facilities are hindering barrier islands from natural movement.</p>
-        <p>Piping plovers are brownish-grey shore birds with a round body, big black eyes, and a short, sharp orange black-tipped bill. They usually have shallow scrape nests in the softy sandy area with sparse vegetation along the shores. In late March, they will fly through the Atlantic Flyway to breed on the beaches of New York and Connecticut.</p>
-        <p>In the late 18th century, plovers were the popular target of hunters, as their feathers can be decorated on hats and clothes. With the Migratory Bird Treaty Act of 1918, they were under protection and their population increased until 1950. Due to the habitats loss, as more beaches are developed for recreation, the number began to decline again. In 1985, the Atlantic Coast and Northern Great Plains populations were listed as threatened, and the population in the Great Lakes watershed was listed as endangered, according to <a href='https://www.fws.gov/species/piping-plover-charadrius-melodus'>US Fish & Wildlife Service</a>.</p>
+        <p class="firstpara">When Samantha Robinson saw “JYJ” from a mile away in a spotting scope, she knew he would turn away soon, as he always did. He was shy and evasive, always avoiding humans.</p>
+        <p>JYJ is a piping plover, named after the number on his banded flag that researchers gave him seven years ago. He was never trapped again by humans afterwards. </p>
+        <p>“Every plover is different,” Robinson said. She started studying piping plovers and other shorebirds as a part of a Virginia Tech team in 2016. </p>
+        <p>“You have plovers that are gonna stick right next to their nest and let you know that they’re upset with whatever you’re doing right in your face, and there are other ones that all go fly away and hide and you'll never see them again.” </p>
+        <p>Piping plovers are brownish-grey shore birds with a round body. Their orange legs and orange black-tipped bill is the key to distinguishing them from other plovers. As a conservation-reliant species, which means their survival depends on active human management, piping plovers are in need of scientists’ monitoring, as well as the public’s cooperation.</p>
+        <p>They are among the <a href='https://www.audubon.org/climate/survivalbydegrees''>two-thirds of bird species</a> under threat by climate change in North America. But recently, scientists have found that a certain amount of sea-level rise and hurricanes may benefit the shorebirds.</p>
+        <p>From 2013 to 2018, Robinson’s Virginia Tech team captured and banded 152 adults and 353 chicks on the Fire and Westhampton barrier islands in New York. It’s part of a series of studies on how piping plovers reacted to the habitat change spurred by Hurricane Sandy nine years ago. As strong winds removed vegetation and expanded the beachy area, new habitats suitable for piping plovers were created. But scientists also pointed out that artificial facilities are hindering barrier islands from natural movement.</p>
+        <p>In late March, piping plovers will fly via the Atlantic Flyway to breed on the beaches of New York and Connecticut. They will nest in the soft, sandy area with sparse vegetation along the shores.</p>
+        <p>In the late 18th century, plovers were the popular target of hunters. Their feathers were used for decoration on hats and clothes. With the Migratory Bird Treaty Act of 1918, they were under protection and their population increased until 1950. Due to habitat loss, as more beaches were developed for recreation, the number began to decline again. </p>
+        <p>In 1985, the Atlantic Coast and Northern Great Plains populations were listed as threatened, and the population in the Great Lakes watershed was listed as endangered, according to <a href='https://www.fws.gov/species/piping-plover-charadrius-melodus'>US Fish & Wildlife Service</a>.</p>
     </div>
     <div class="main-container">
       <section id="scrolly3" class="side-by-side">
@@ -179,7 +184,7 @@
 
 <div id="g-population-scrolly-box" class="ai2html">
 <h2 class='chart-title'>Although growing, the distribution of gaining population of the Atlantic Coast piping plover remains uneven</h2>
-<h2 class='sub-title'>The New England recovery unit constitutes a stronghold, but neither New York-New Jersey nor southern states achieve the <span style="border-style: dashed; border-color:#fb8500">delisting goal</span>.</h2>
+<h2 class='sub-title'>The New England recovery unit constitutes a stronghold, but neither New York-New Jersey nor southern states achieve the <span style="border-style: dashed; border-color:#fb8500">delisting goal</span>. If achieved, they can be removed from the Federal List of Endangered and Threatened Wildlife and Plants.</h2>
 <!-- Artboard: Artboard_1 -->
 <div id="g-population-scrolly-Artboard_1" class="g-artboard" style="max-width: 600px;max-height: 500px" data-aspect-ratio="1.2" data-min-width="0">
   
@@ -393,10 +398,10 @@
             in <span style="background: #023047; color: white">New England</span>. The number has reached its recovery goal, 625 pairs, for almost 20 years.</p>
         </div>
         <div class="step3" id="step3-two">
-          <p>For<span style="background: #219ebc">NY-NJ</span> and <span style="background: #8ecae6">Southern</span>, however, the minimum subpopulations haven't achieved their delisting goal yet.</p>
+          <p>For the<span style="background: #219ebc">New York/New Jersey</span> and <span style="background: #8ecae6">Southern</span> populations, however, the minimum subpopulations haven't achieved their delisting goal yet.</p>
         </div>
         <div class="step3" id="step3-three">
-          <p>In the <span style="background: #219ebc">NY-NJ</span> recovery unit, the population surpassed the recovery unity goal of 575 pairs twice but it's not sustained.</p>
+          <p>In the <span style="background: #219ebc">NY-NJ</span> recovery unit, the population surpassed the recovery unity goal of 575 pairs twice but it's not sustained. The number should maintain for five years before being considered for the removal from the threatened list.</p>
         </div>
       </div>
       </section>
@@ -496,17 +501,19 @@ window.addEventListener("resize", scroller3.resize);
     <script src='config.js'></script>
     <script src="./map.js"></script>
     <div class="main-container">
-      <p class="firstpara">More than one ornithologist expressed concerns about the shorebird species. Some of them are already rare birds that have been identified as species of concern, like American oystercatchers. “And they are going to be facing an increasingly difficult battle of having their nest survive as the intensity of storms increase,” said Dustin Partridge, the director of Science and Conservation at Audubon’s New York chapter, a community that works for the protection of wild birds and habitat.</p>
-      <p><img src='images/americanOystercatcher.jpg'></p>
-      <p class='imageCredit'> An American Oystercatcher and two piping plovers, Rockaway Beach, Aug 4, 2022 </p>
-      <p>In Connecticut and New York, piping plovers and boat-tailed grackles are listed as high climate-vulnerable species, according to the <a href='https://www.audubon.org/climate/survivalbydegrees'>National Audubon Survival by Degree Report</a>. The sea level rise can permanently consume coastal habitats.</p>
-      <p>Partridge said these birds lack attention because people are always thinking about urban birds in Central Park. But it’s also important to look at the shores, as the city is largely islands, he said.</p>
-      <p>But people are taking action too.</p>
-      <p><img src="images/barnegat-light.png"></p>
-      <p class='imageCredit'>In Barnegat Light, New Jersey, a habitat restoration project was conducted to remove the vegetation and create shallow pond starting in 2018. </p>
-      <p>After conducting more than ten outreach events this summer, Casas planned to sort and analyze data. Next year, the result of the disturbance data collection survey will be available.</p>
+      <p class="firstpara">After conducting more than ten outreach events this summer, Casas planned to sort and analyze data. Next year, the result of the disturbance data collection survey will be available.</p>
       <p>Ramirez is considering pursuing her master's degree in community psychology. She realizes it’s important to engage the public and persuade them to change their behavior.</p>
-      <p style="padding-bottom: 100px;">Robinson has a new role to play, the Program Manager of the Delaware Department of Natural Resources and Environmental Control. From a researcher to an officer, she wanted to connect science and management better and make a difference.</p>
+      <p>Robinson has a new role to play, the Program Manager of the Delaware Department of Natural Resources and Environmental Control. From a researcher to an officer, she wanted to connect science and management better and make a difference.</p>
+      <p>The piping plover is an indicator, helping scientist to get a sense of the coastal ecosystem under climate change and human disturbance.  And it’s not the only shorebird species under the threat.</p>
+      <p><img src="images/barnegat-light.png"></p>
+      <p class='imageCredit'>In Barnegat Light, New Jersey, a habitat restoration project was conducted to remove the vegetation and create shallow pond starting in 2018. (Photo from NY Audubon)</p>
+      <p>After conducting more than ten outreach events this summer, Casas planned to sort and analyze data. Next year, the result of the disturbance data collection survey will be available.</p>
+      <p>“I do think that birds are a good entry point for the average person into the challenges that the natural world faces with climate change.” Scott Weidensaul said, who is the author of <span style="font-style: italic">A World on the Wing</span>, and an ornithologist focusing on migratory birds.</p>
+      <p>In Connecticut and New York, piping plovers and boat-tailed grackles are listed as high climate-vulnerable species, according to the <a href='https://www.audubon.org/climate/survivalbydegrees'>National Audubon Survival by Degree Report</a>. Further sea level rise could permanently consume coastal habitats.</p>
+      <p>“And they are going to be facing an increasingly difficult battle of having their nest survive as the intensity of storms increase,” said Dustin Partridge, the director of Science and Conservation at Audubon’s New York chapter, a community that works for the protection of wild birds and habitat.</p>
+      <p>Partridge said these birds lack attention because people are always thinking about urban birds in Central Park. But it’s also important to look at the shores. The city is, after all,  largely islands.</p>
+      <p><img src='images/americanOystercatcher.jpg'></p>
+      <p class='imageCredit' style="padding-bottom:100px"> An American Oystercatcher and two piping plovers, Rockaway Beach, Aug 4, 2022 (Photo by Chuqin Jiang)</p>
     </div>
     <div class="main-container">
       <div id="footer-box">
