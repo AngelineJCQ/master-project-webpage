@@ -23,8 +23,12 @@ let divChapter4 =
 "<p>The study also found that some engineered habitats, including manipulated dunes and restoration areas, are gaining piping plover populations too. However, since these places were meant to reduce future movement of islands and increase human activities, the article suggested that dune development should not be considered a management strategy.</p>" +
 "<p>Similarly, another U.S. Geological Survey research team led by Sara Zeigler, also found that a certain amount of increase in sea rise and increased likelihood of overwash can benefit the shorebirds.</p>"+
 "<p>Based on the prediction model, as rates of shoreline erosion increase, Fire Island would become narrower and flatter, with more flooding in housing communities and businesses on the island. And shorebirds like the piping plover would move to new habitats created by this erosion.</p>" +
+"<img src='images/two-models.png'>" +
+"<p class='imageCredit'>(Data provided by Sara Zeigler; Graphic by Chuqin Jiang)</p>" +
 "<p>“I think we’re still very much in the learning phase,” Zeigler said. She pointed out that scientists are struggling to find that balance between when a sea-level rise is going to be healthy for some of these ecosystems and when it is going to be too much.</p>" +
-"<p>“We will get to a point, inevitably, where there's so much water and the storms are so powerful, that we're going to start to see our islands disintegrate. And we did see that in some places in the Gulf.”</p>"
+"<p>“We will get to a point, inevitably, where there's so much water and the storms are so powerful, that we're going to start to see our islands disintegrate. And we did see that in some places in the Gulf.”</p>" +
+'<div style="padding:0; margin:0 auto" class="row"><div class="column" style="width:40%"><img src="images/satellite/1985-NJ.png"></div><div class="column" style="width:40%"><img src="images/satellite/2020-NJ.png"></div></div>' +
+'<p class="imageCredit">The west end of Long Beach Island without human facilities moved in 35 years while the east was stabilized by buildings and other constructions.</p>'
 ;
 
 let divChapter5 =
@@ -32,12 +36,12 @@ let divChapter5 =
 "<p>Shelby Casas, the Coastal Program Associate at Audubon New York, pointed out that the early storm during the nesting season can have fatal effects on the shorebirds. The flood can wash out nests where birds have already laid eggs. Then, the birds have to start again.</p>" +
 "<p>On July 7, Casas just finished an outreach lecture at <span style='font-weight:800'>Jones Beach Energy & Nature Center</span>. When she took a walk on the west end of the beach afterward, she noticed a sign saying “no dogs on this site” was ripped off from the fence and broken in the middle.</p>" +
 '<img src="images/shelby-sign.jpeg">' +
-"<p class='imageCredit'> Shelby Casas, at the west end of Jones Beach, July 9  (Photo by Chuqin Jiang)</p>" +
+"<p class='imageCredit'> Shelby Casas, at the west end of Jones Beach, July 9, 2022  (Photo by Chuqin Jiang)</p>" +
 "<p>Mia Ramirez, Environmental Education Assistant from the Jones Beach State Park, who accompanied Casas for the walk, said that lots of people feel they have an ownership of the beach. </p>"+
 "<p>“They're like, ‘Why do I have to worry about this bird? I've been taking my dog here for years and years and years…Why is someone telling me not to (do it)?’”</p>" +
 "<p>Casas said she was prepared for that. She’ll put up a new sign. In the past few years, they only used signs simply telling people to stay out of the nesting area. But this year, the signs have more explanatory notes and illustrations drawn by local school kids and other designers.</p>"+
 '<img src="images/mia-sign.jpg">' +
-"<p class='imageCredit'> Mia Ramirez, holding a sign designed by kids, July 9 (Photo by Chuqin Jiang)</p>" +
+"<p class='imageCredit'> Mia Ramirez, holding a sign designed by kids, July 9, 2022 (Photo by Chuqin Jiang)</p>" +
 "<p>“Our goal this year with the signs was kind of more to draw people in. And get the message across that we don't want dogs on these beaches, but to also explain why,” Casas said.</p>" +
 "<p>This is a part of a three-month <a href='https://ny.audubon.org/news/can-individual-actions-save-threatened-birds-two-local-beaches-chosen-beach-nesting-bird-study'>study</a> to review the outcomes of different outreach efforts conducted by Audubon New York. Apart from putting up signs, the team has organized more frequent outreach activities compared to previous years, like tabling at multiple sites along the north and the south shore that have shorebird activity.</p>" 
 ;
@@ -46,8 +50,12 @@ let divChapter7 =
 "<p>But the difficult part is to make people aware that the birds are actually here.</p>" + 
 "<p>They are good at camouflage — it’s hard to tell them from the sand from a distance. And not many people know that piping plovers love walking on the sand and nesting right on the beach. </p>" +
 "<p>On <span style='font-weight:800'>Rockaway Beach</span> in Queens, the west part of Beach 38th Street is closed for protecting the breeding birds. A symbolic fence was put up, visually warning people to keep out of the area. On the sign, the illustrations of least tern and piping plover are under the red, uppercase letters ‘Restricted Area’.</p>" +
+'<img src="images/beach-fence.jpeg">' +
+"<p class='imageCredit'> Symbolic fence on the Rockawat Beach, Aug 14, 2022  (Photo by Chuqin Jiang)</p>" +
 "<p>Only posted and roped-off areas are set up, instead of permanent physical fences, because they can be easily washed away by the high tides, according to <a href='https://kimsmithdesigns.com/2018/08/01/piping-plover-symbolic-fencing-recommendations/'>Kim Smith</a>, a wildlife conservationist and landscape designer. On some beaches, when piping plover couples start to build their nests, smaller steel-wire fences are built around them. The holes on the fences are big enough only for piping plovers to run through, keeping other larger predators, like feral cats and raccoons, and pets out.</p>" +
 "<p>Even well-behaved pets can be a threat to the birds. Unleashed dogs can be mistaken as predators by plovers. To protect their chicks, they will pretend their wings are broken and lead the dogs away from the nest. But this strategy may let their nest open to real predators. And the trash left by beachgoers attracts raccoons and foxes, which can disturb and eat chicks.</p>" +
+'<img src="images/beach-nesting.jpg">' +
+"<p class='imageCredit'> Smaller fence put up around the nest, Jones Beach, July 9, 2022  (Photo by Chuqin Jiang)</p>" +
 "<p>Some beachgoers might spot and disturb them on purpose. More than one researcher explained that they normally don’t share the nest location data with the public because they are afraid people will find the nest and get too close to them.</p>" +
 "<p>Last month, NYC Plover Project, a volunteer group, tweeted that a 12-day-old piping plover chick was stepped on by a beachgoer. After being seen dragging its broken leg on the beach in Queens, it died next to its sibling the following day.</p>" ;
 
@@ -95,6 +103,11 @@ var config = {
         },
       ],
       onChapterExit: [
+        {
+          layer: "ploverRange",
+          opacity: 0,
+          duration: 300,
+        },
       ],
     },
     {
@@ -135,7 +148,7 @@ var config = {
         },
         {
           layer: "virginiaMaryland",
-          opacity: 0.3,
+          opacity: 0,
           duration: 300,
         },
       ],

@@ -262,7 +262,7 @@ map.on("load", function () {
         data: "data/no-intervention.geojson",
       },
       paint: {
-          "fill-color":"#fff3b0",
+          "fill-color":"#fb8500",
         "fill-opacity": 0,
     },
   }, "settlement-subdivision-label",
@@ -276,7 +276,7 @@ map.on("load", function () {
         data: "data/virginiaMaryland.geojson",
       },
       paint: {
-        "fill-color": "#fff3b0",
+        "fill-color": "#fb8500",
         "fill-opacity":0,
     },
   },"settlement-subdivision-label",
@@ -290,7 +290,7 @@ map.on("load", function () {
         data: "data/newYork.geojson",
       },
       paint: {
-          "fill-color": "#fff3b0",
+          "fill-color": "#fb8500",
         "fill-opacity":0,
     },
   },"settlement-subdivision-label",
@@ -304,7 +304,7 @@ map.on("load", function () {
         data: "data/jonesBeach.geojson",
       },
       paint: {
-          "fill-color": "#fff3b0",
+          "fill-color": "#fb8500",
         "fill-opacity":0,
     },
   },"settlement-subdivision-label",
@@ -318,7 +318,7 @@ map.on("load", function () {
         data: "data/rockawayBeach.geojson",
       },
       paint: {
-          "fill-color": "#fff3b0",
+          "fill-color": "#fb8500",
         "fill-opacity":0,
     },
   },"settlement-subdivision-label",
@@ -329,7 +329,7 @@ map.on("load", function () {
   scroller
     .setup({
       step: ".step-second",
-      offset: 0.75,
+      offset: 0.8,
       progress: true,
     })
     .onStepEnter((response) => {
